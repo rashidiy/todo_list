@@ -1,1 +1,2 @@
-from .auth import CreateUserView
+from .auth import AuthRegisterView
+from .todo import TodoListView
