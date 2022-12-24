@@ -25,7 +25,7 @@
 
 
 <!-- Hidden form. Form submits new item positions -->
-<form style="display: none;" id="reorderForm" method="post" action="{% url 'task-reorder' %}">
+<form style="display: none;" id="reorderForm" method="post" action="{% url 'todo_reorder' %}">
     {% csrf_token %}
     <input type="hidden" id="positionInput" name="position">
 </form>
@@ -50,7 +50,7 @@
     {% empty %}
     <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
         <h3>No new tasks are created.</h3>
-        <h3>Create a <a style="text-decoration: none; color: #e53935;" href="{% url 'task-create' %}">New task</a> ! </h3>
+        <h3>Create a <a style="text-decoration: none; color: #e53935;" href="{% url 'todo_create' %}">New task</a> ! </h3>
     </div>
     {% endfor %}
 </div>
