@@ -2,7 +2,7 @@ from django.conf.global_settings import AUTH_PASSWORD_VALIDATORS
 from django.contrib.auth.forms import UsernameField
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.forms import ModelForm, CharField, EmailField, PasswordInput
+from django.forms import ModelForm, CharField, EmailField, PasswordInput, Form
 
 
 class UserRegisterForm(ModelForm):
@@ -20,3 +20,7 @@ class UserRegisterForm(ModelForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'username', 'email')
+
+
+class PositionForm(Form):
+    position = CharField()
