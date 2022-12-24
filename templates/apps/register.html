@@ -1,0 +1,36 @@
+{% extends 'apps/main.html' %}
+{% block content %}
+
+    <div class="header-bar">
+        <h1>Register</h1>
+    </div>
+
+    <div class="card-body">
+        <form method="POST" action="{% url 'register' %}">
+            {% csrf_token %}
+            <label>{{ form.first_name.label }}</label>
+            {{ form.first_name }}
+
+            <label>{{ form.last_name.label }}</label>
+            {{ form.last_name }}
+
+            <label>{{ form.username.label }}</label>
+            {{ form.username }}
+
+            <label>{{ form.email.label }}</label>
+            {{ form.email }}
+
+            <label>{{ form.password1.label }}</label>
+            {{ form.password1 }}
+
+            <label>{{ form.password2.label }}</label>
+            {{ form.password2 }}
+            <input style="margin-top:10px ;" class="button" type="submit" value="Register">
+        </form>
+        {#    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>#}
+    </div>
+
+
+
+
+{% endblock content %}
