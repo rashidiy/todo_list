@@ -2,8 +2,6 @@ from django.contrib.auth.models import User
 from django.db.models import Model, CharField, BooleanField, ForeignKey, CASCADE
 
 
-# Create your models here.
-
 class Task(Model):
     user = ForeignKey(User, CASCADE)
     title = CharField(max_length=255)
