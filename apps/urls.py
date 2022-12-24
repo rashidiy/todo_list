@@ -3,7 +3,7 @@ from django.urls import path, reverse_lazy
 
 from .views import AuthRegisterView
 from .views.auth import AuthLoginView
-from .views.todo import TodoListView
+from .views.todo import TodoListView, TodoReorder, TodoCreateView
 
 urlpatterns = [
     path('accounts/register', AuthRegisterView.as_view(), name='register'),
@@ -11,4 +11,6 @@ urlpatterns = [
     path('accounts/logout', LogoutView.as_view(next_page=reverse_lazy('login')), name='logout'),
 
     path('todo', TodoListView.as_view(), name='todo'),
+    path('todo-reorder', TodoReorder.as_view(), name='todo_reorder'),
+    path('todo-create', TodoCreateView.as_view(), name='todo_create'),
 ]
